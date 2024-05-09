@@ -1,7 +1,7 @@
 # osm2garmin-ubuntu
 ## Requaried
 ```bash
-sudo apt install mkgmap mkgmap-splitter wget
+sudo apt install mkgmap mkgmap-splitter wget git
 ```
 ## Install
 ``` bash
