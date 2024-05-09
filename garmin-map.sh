@@ -11,7 +11,12 @@ if [ -z $1 ]; then
   exit 1
 fi
 
-SCRIPT_PATH=$(dirname $0)
+if [ -z $2 ]; then
+  SCRIPT_PATH=$(dirname $0)
+else
+  SCRIPT_PATH=$2
+fi
+
 cd $SCRIPT_PATH
 
 URL=$1
@@ -22,7 +27,7 @@ wget $URL
 mkgmap-splitter --keep-complete=true $FILENAME
 rm $FILENAME
 
-mkgmap --gmapsupp -c template.args -n $MAPNUMBER --description=$MAPNAME --country-name=$COUNTRY_NAME --country-abbr=$COUNTRY_ABBR --unicode --lower-case --index --split-name-index --remove-ovm-work-files=true
+mkgmap --gmapsupp -c template.args -n $MAPNUMBER --description=$MAPNAME --country-name=$COUNTRY_NAME --country-abbr=$COUNTRY_ABBR --unicode --lower-case --index --split-name-index --remove-ovm-work-files=true --name-tag-list=loc_name,int_name,name,name:en
 
 rm -f *.osm.pbf
 rm -f areas.list areas.poly densities-out.txt template.args osmmap.tdb osmmap.img

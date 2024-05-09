@@ -11,13 +11,14 @@ chmod +x garmin-map.sh
 ```
 ## Usage
 ``` bash
-./garmin-map.sh URL
+./garmin-map.sh URL [DIR]
 ```
 URL - something like: https://download.geofabrik.de/russia/kaliningrad-latest.osm.pbf
+DIR - target dir
 
 ## Examples
 ``` bash
-./garmin-map.sh https://download.geofabrik.de/russia-latest.osm.pbf
+./garmin-map.sh https://download.geofabrik.de/russia-latest.osm.pbf ~/
 ```
 ``` bash
 ./garmin-map.sh https://download.geofabrik.de/asia/kazakhstan-latest.osm.pbf
